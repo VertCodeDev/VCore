@@ -111,8 +111,8 @@ public class StringParser {
      * @param clazz the class to get the string parser by
      * @return the string parser
      */
-    public static IStringParsable<?> getStringParser(Class<?> clazz) {
-        return STRING_PARSERS.get(clazz);
+    public static <T> @Nullable IStringParsable<T> getStringParser(Class<T> clazz) {
+        return (IStringParsable<T>) STRING_PARSERS.get(clazz);
     }
 
 }
