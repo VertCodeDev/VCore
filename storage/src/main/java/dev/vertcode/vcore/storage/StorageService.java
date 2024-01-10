@@ -72,7 +72,7 @@ public abstract class StorageService<I, V extends StorageObject<I>> {
     /**
      * Set the auto save interval.
      *
-     * @param autoSaveInterval The auto save interval
+     * @param autoSaveInterval     The auto save interval
      * @param autoSaveIntervalUnit The {@link TimeUnit} of the auto save interval
      */
     public void setUpdateInterval(long autoSaveInterval, TimeUnit autoSaveIntervalUnit) {
@@ -105,7 +105,7 @@ public abstract class StorageService<I, V extends StorageObject<I>> {
      * @return The value you want to get
      */
     public @Nullable V get(I identifier) {
-        return this.get(identifier, true);
+        return get(identifier, true);
     }
 
     /**
@@ -122,7 +122,7 @@ public abstract class StorageService<I, V extends StorageObject<I>> {
      * @return All the values
      */
     public Collection<V> getAll() {
-        return this.getAll(false);
+        return getAll(false);
     }
 
     /**
@@ -230,7 +230,7 @@ public abstract class StorageService<I, V extends StorageObject<I>> {
     protected @Nullable StorageContext getStorageContext() {
         try {
             return this.storageObjectClass.getAnnotation(StorageContext.class);
-        }catch (Exception ex) {
+        } catch (Exception ex) {
             return null;
         }
     }
